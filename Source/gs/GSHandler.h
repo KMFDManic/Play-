@@ -759,6 +759,7 @@ public:
 	bool GetCrtIsFrameMode() const;
 
 	virtual Framework::CBitmap GetScreenshot();
+	void ProcessSingleFrame();
 
 	boost::signals2::signal<void()> OnFlipComplete;
 
