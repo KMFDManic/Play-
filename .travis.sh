@@ -49,7 +49,7 @@ travis_script()
     if [ "$TARGET_OS" = "Android" ]; then
         if [ "$BUILD_LIBRETRO" = "yes" ]; then
             export PATH=/opt/cmake-3.8.1-Linux-x86_64/bin/:$PATH
-            export ANDROID_NDK=`pwd`/../../android-ndk-r18
+            export ANDROID_NDK=`pwd`/android-ndk-r18
             pushd build_retro
             bash android_build.sh
             popd
