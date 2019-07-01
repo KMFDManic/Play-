@@ -17,11 +17,9 @@ if "%BUILD_PLAY%" == "ON" (
 	cd ..
 	"C:\Program Files (x86)\NSIS\makensis.exe" ./installer_win32/%INSTALLER_SCRIPT%
 	
-	cd ..
-	cd ..
 	mkdir %REPO_COMMIT_SHORT%
-	move Play-Build\Play\installer_win32\*.exe %REPO_COMMIT_SHORT%
-	move Play-Build\Play\build\Source\ui_libretro\Release\play_libretro.dll %REPO_COMMIT_SHORT%
+	move installer_win32\*.exe %REPO_COMMIT_SHORT%
+	move build\Source\ui_libretro\Release\play_libretro.dll %REPO_COMMIT_SHORT%
 )
 
 if "%BUILD_PSFPLAYER%" == "ON" (
@@ -34,10 +32,8 @@ if "%BUILD_PSFPLAYER%" == "ON" (
 	cd ..
 	"C:\Program Files (x86)\NSIS\makensis.exe" ./tools/PsfPlayer/installer_win32/%INSTALLER_SCRIPT%
 
-	cd ..
-	cd ..
 	mkdir %REPO_COMMIT_SHORT%
-	move Play-Build\Play\tools\PsfPlayer\installer_win32\*.exe %REPO_COMMIT_SHORT%
+	move tools\PsfPlayer\installer_win32\*.exe %REPO_COMMIT_SHORT%
 )
 
 if "%BUILD_PSFAOT%" == "ON" (
