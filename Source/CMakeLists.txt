@@ -41,22 +41,6 @@ if(NOT TARGET Framework)
 endif()
 list(APPEND PROJECT_LIBS Framework)
 
-if(NOT TARGET Framework_Http)
-	add_subdirectory(
-		${CMAKE_CURRENT_SOURCE_DIR}/../../Framework/build_cmake/FrameworkHttp
-		${CMAKE_CURRENT_BINARY_DIR}/FrameworkHttp
-	)
-endif()
-list(APPEND PROJECT_LIBS Framework_Http)
-
-if(NOT TARGET Framework_Sqlite)
-	add_subdirectory(
-		${CMAKE_CURRENT_SOURCE_DIR}/../../Framework/build_cmake/FrameworkSqlite
-		${CMAKE_CURRENT_BINARY_DIR}/FrameworkSqlite
-	)
-endif()
-list(INSERT PROJECT_LIBS 0 Framework_Sqlite)
-
 if(NOT TARGET CodeGen)
 	add_subdirectory(
 		${CMAKE_CURRENT_SOURCE_DIR}/../../CodeGen/build_cmake
@@ -390,8 +374,6 @@ set(COMMON_SRC_FILES
 	PS2VM_Preferences.h
 	psx/PsxBios.cpp
 	psx/PsxBios.h
-	s3stream/AmazonS3Client.cpp
-	s3stream/S3ObjectStream.cpp
 	saves/Icon.cpp
 	saves/Icon.h
 	saves/MaxSaveImporter.cpp
@@ -424,12 +406,6 @@ set(COMMON_SRC_FILES
 	ScreenShotUtils.cpp
 	ScreenShotUtils.h
 	SifDefs.h
-	ui_shared/BootablesDbClient.cpp
-	ui_shared/BootablesDbClient.h
-	ui_shared/BootablesProcesses.cpp
-	ui_shared/BootablesProcesses.h
-	ui_shared/TheGamesDbClient.cpp
-	ui_shared/TheGamesDbClient.h
 	VirtualPad.cpp
 	VirtualPad.h
 )
