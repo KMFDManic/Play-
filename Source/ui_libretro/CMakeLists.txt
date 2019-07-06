@@ -47,7 +47,7 @@ set(SRC
 )
 
 if(TARGET_PLATFORM_ANDROID)
-	list(APPEND PROJECT_LIBS android log GLESv3 EGL z)
+	list(APPEND PROJECT_LIBS android log GLESv3 EGL)
 elseif(TARGET_PLATFORM_IOS)
 	list(APPEND PROJECT_LIBS "-ObjC -lsqlite3 -framework OpenGLES")
 endif()
@@ -61,6 +61,9 @@ target_include_directories(play_libretro PRIVATE
 
 if(TARGET_PLATFORM_ANDROID)
 	set_target_properties(play_libretro PROPERTIES SUFFIX "_android.so")
+endif()
+if(TARGET_PLATFORM_IOS)
+	set_target_properties(play_libretro PROPERTIES SUFFIX "_ios.dylib")
 endif()
 
 target_link_libraries(play_libretro ${PROJECT_LIBS})
