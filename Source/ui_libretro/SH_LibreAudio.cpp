@@ -1,10 +1,8 @@
 #include "SH_LibreAudio.h"
 #include "libretro.h"
 #include <cstring>
-#include <mutex>
 
 extern retro_audio_sample_batch_t g_set_audio_sample_batch_cb;
-std::mutex m_buffer_lock;
 
 CSoundHandler* CSH_LibreAudio::HandlerFactory()
 {
